@@ -5,6 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int cnit_useless_variable = 1;
+
+void cnit_trigger_breakpoint() {
+    /* Put your breakpoint here! */
+    cnit_useless_variable = cnit_useless_variable * 2 + 1;
+}
+
 #ifdef DISABLE_COLORS
     #define CONSOLE_GREEN ""
     #define CONSOLE_RED ""
@@ -67,6 +74,7 @@ int cnit_run_tests() {
         free(curr_node);
         curr_node = next_node;
     }
+    printf("%s", cnit_useless_variable ? "" : "\r"); /* prevent function from being compiled out */
     printf("%d/%d tests passed. (%.0f%%)\n", passed, cnit_test_count, (double) passed / cnit_test_count * 100);
     return passed != cnit_test_count;
 }
