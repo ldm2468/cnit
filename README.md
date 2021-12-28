@@ -1,6 +1,6 @@
 # cnit
 ## Minimal Header-only Unit Testing for C
-Extremely minimal unit testing in ANSI-C in two headers.
+Extremely minimal unit testing in two headers, written in ANSI C.
 
 ## Example Project
 An example CMake project that uses this library can be seen
