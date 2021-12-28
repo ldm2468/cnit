@@ -53,3 +53,8 @@ support ANSI colors. If so, disable color output by adding the macro definition
 ```CMake
 target_compile_definitions(my_target PRIVATE DISABLE_COLORS)
 ```
+
+## Debugging with cnit
+It can be useful to set a breakpoint that only triggers when an assertion fails.
+To do this, add a breakpoint at the function `cnit_trigger_breakpoint()` in
+`cnit_main.h`.
